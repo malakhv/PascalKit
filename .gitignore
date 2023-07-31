@@ -1,0 +1,11 @@
+backup
+build
+lib
+
+Makefile*
+
+*.exe
+*.o
+*.ppu
+*.pp
+*.compiled

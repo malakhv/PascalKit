@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="PascalKit"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Mikhail Malakhov &lt;malakhv@gmail.com>"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="src\util"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Parsing>
+        <Style Value="1"/>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi"/>
+          <CStyleOperator Value="False"/>
+          <AllowLabel Value="False"/>
+        </SyntaxOptions>
+      </Parsing>
+    </CompilerOptions>
+    <Description Value="Pascal Utils Library (PUL)"/>
+    <License Value="                       Pascal Utils Library (PUL)
+
+Copyright (C) 1996-2023 Mikhail Malakhov &lt;malakhv@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+&quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied.
+
+See the License for the specific language governing permissions
+and limitations under the License."/>
+    <Version Minor="1"/>
+    <Files>
+      <Item>
+        <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
+        <UnitName Value="Mikhan.Util.StrUtils"/>
+      </Item>
+      <Item>
+        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
+        <UnitName Value="Mikhan.Util.AppArgs"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
