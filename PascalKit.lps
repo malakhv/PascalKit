@@ -8,16 +8,17 @@
       <Unit>
         <Filename Value="PascalKit.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="3" Y="25"/>
+        <CursorPos X="21" Y="31"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="102"/>
-        <CursorPos X="40" Y="109"/>
+        <TopLine Value="88"/>
+        <CursorPos X="49" Y="107"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
