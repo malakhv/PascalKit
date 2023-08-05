@@ -104,6 +104,11 @@ function StartWith(const Prefix, S: String): Boolean;
 }
 function BytesToStr(const Source: Array of Byte): String;
 
+{
+  Repeats source string specified times.
+}
+function RepeatString(const Source: String; Count: Integer): String;
+
 Implementation
 
 uses SysUtils;
@@ -134,6 +139,17 @@ begin
     Result := '';
     for i := Low(Source) to High(Source) do
         Result := Result + Char(Source[i]);
+end;
+
+function RepeatString(const Source: String; Count: Integer): String;
+var i, len: Integer;
+begin
+    Result := EMPTY;
+    if Count <= 0 then Exit;
+    len := Length(Source);
+    SetLength(Result, len * Count);
+    for i := 0 to Count - 1 do
+        Move(Source[1], Result[len*i+1], len);
 end;
 
 end.
