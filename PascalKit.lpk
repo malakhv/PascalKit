@@ -49,6 +49,10 @@ and limitations under the License."/>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <UnitName Value="Mikhan.Util.AppArgs"/>
       </Item>
+      <Item>
+        <Filename Value="src\util\Mikhan.Util.AppVersion.pas"/>
+        <UnitName Value="Mikhan.Util.AppVersion"/>
+      </Item>
     </Files>
     <RequiredPkgs>
       <Item>
