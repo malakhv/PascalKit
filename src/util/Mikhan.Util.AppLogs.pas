@@ -59,6 +59,11 @@ type
 
 type
 
+    { The formats of dump output, hex or char. }
+    TDumpOutFormat = (dfHex, dfChar);
+
+type
+
     { Class implements a program logging mechanism. }
     TAppLogs = class (TObject)
     private
@@ -76,7 +81,8 @@ type
         { Low-level logging call. Print a messages with specified parameters. }
         procedure Print(Level: TLogLevel; const Messages: array of const); overload;
         { Low-level logging call. Print a messages with specified parameters. }
-        procedure Print(Level: TLogLevel; const Tag: String; const Messages: array of const); overload;
+        procedure Print(Level: TLogLevel; const Tag: String;
+            const Messages: array of const); overload;
     public
         { The main program log tag. }
         property AppTag: String read FAppTag;
@@ -136,12 +142,17 @@ type
         { Construct a new instance of TAppLogs class with specified parameters. }
         constructor Create(AppTag: String; Debug: Boolean); overload;
         destructor Destroy; override;
+
         { The class method to print raw data in hexadecimal format. }
-        class procedure Dump(Source: Array of Byte); overload;
+        class procedure Dump(const Source: Array of Byte); overload;
         { The class method to print raw data in hexadecimal format. }
-        class procedure Dump(Source: Array of Byte; Limit: Integer); overload;
-        { The class method to print raw data. }
-        class procedure Dump(Source: Array of Byte; Limit: Integer; InHex: Boolean); overload;
+        class procedure Dump(const Source: Array of Byte; Limit: Integer); overload;
+        { The class method to print raw data in hexadecimal format. }
+        class procedure Dump(const Source: Array of Byte; Offset, Limit: Integer); overload;
+        { The class method to print raw data in hexadecimal or char format. }
+        class procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
+            Format: TDumpOutFormat); overload;
+
     end;
 
 //--------------------------------------------------------------------------------------------------
@@ -217,75 +228,6 @@ begin
     inherited;
 end;
 
-{ The class method to print raw data in hexadecimal format. }
-class procedure TAppLogs.Dump(Source: Array of Byte);
-begin
-    TAppLogs.Dump(Source, 0);
-end;
-
-{ The class method to print raw data in hexadecimal format. }
-class procedure TAppLogs.Dump(Source: Array of Byte; Limit: Integer);
-begin
-    TAppLogs.Dump(Source, Limit, True);
-end;
-
-{ The class method to print raw data. }
-class procedure TAppLogs.Dump(Source: Array of Byte; Limit: Integer; InHex: Boolean);
-const
-    COL_LIMIT = $F;
-    COL_OFFSET = '          ';
-    COL_SEP = '| ';
-    HEADER_SEP = '---------------------------------------------------------';
-var i, col, offset: Integer;
-    val: Byte;
-
-    procedure Header();
-    var i: Integer;
-    begin
-        Write(COL_OFFSET);
-        for i := 0 to COL_LIMIT do
-        begin
-            Write(IntToHex(i, 2)); Write(' ');
-        end;
-        WriteLn();
-        WriteLn(HEADER_SEP);
-    end;
-
-    procedure NewRow();
-    begin
-        Writeln('');
-        offset := offset + COL_LIMIT + 1;
-        Write(IntToHex(offset, 8), COL_SEP);
-        col := COL_LIMIT;
-    end;
-
-begin
-
-    // Print header
-    Header();
-
-    col := COL_LIMIT;
-    offset := 0;
-    if Limit <= 0 then Limit := MaxInt;
-    Write(IntToHex(offset, 8), COL_SEP);
-    for i := Low(Source) to High(Source) do
-    begin
-
-        if col < 0 then NewRow();
-        Dec(col);
-
-        val := Source[i];
-        if (InHex) then
-            Write(IntToHex(val, 2))
-        else
-            Write(val);
-        Write(' ');
-        Dec(Limit);
-        if Limit <= 0 then break;
-    end;
-    Writeln('');
-end;
-
 { Setter for LogLevel property }
 procedure TAppLogs.DoSetLogLevel(LogLevel: TLogLevel);
 begin
@@ -308,14 +250,15 @@ end;
 procedure TAppLogs.Print(Level: TLogLevel; const Tag, Message: String);
 var prefix: String;
 begin
-    if not IsLoggable(Level) then Exit;
+    {if not IsLoggable(Level) then Exit;
     //prefix := '';
     prefix := LogLavelToStr(Level) + TAG_DELIMITER;
     if HasAppTag then
         prefix := AppTag + TAG_DELIMITER + prefix;
     if not Mikhan.Util.StrUtils.isEmpty(Tag) then
         prefix := prefix + Tag + TAG_DELIMITER;
-    Writeln(prefix, Message);
+    Writeln(prefix, Message);}
+    Self.Print(Level, Tag, Message);
 end;
 
 { Low-level logging call. Print a messages with specified parameters. }
@@ -462,6 +405,103 @@ end;
 procedure TAppLogs.E(const Tag: String; const Messages: array of const);
 begin
     Print(TLogLevel.llError, Tag, Messages);
+end;
+
+class procedure TAppLogs.Dump(const Source: Array of Byte);
+begin
+    TAppLogs.Dump(Source, 0, 0, dfHex);
+end;
+
+class procedure TAppLogs.Dump(const Source: Array of Byte; Limit: Integer);
+begin
+    TAppLogs.Dump(Source, 0, Limit, dfHex);
+end;
+
+class procedure TAppLogs.Dump(const Source: Array of Byte; Offset, Limit: Integer);
+begin
+    TAppLogs.Dump(Source, Offset, Limit, dfHex);
+end;
+
+class procedure TAppLogs.Dump(const Source: Array of Byte; Offset,
+    Limit: Integer; Format: TDumpOutFormat);
+const ADDRESS_SPACE = $F;
+
+    procedure Header();
+    var i: Integer;
+    begin
+        Write(EMPTY:10);
+        for i := 0 to ADDRESS_SPACE do
+            Write(IntToHex(i, 2), CHAR_SPACE);
+        WriteLn();
+        Write(RepeatString('-', 57));
+    end;
+
+    procedure NewRow(Address: Integer);
+    begin
+        WriteLn();
+        Write(IntToHex(Address, 8), CHAR_VERT_SLASH, CHAR_SPACE);
+    end;
+
+    function MakeSymbol(Value: Integer): String;
+    begin
+        // Hex
+        if Format = dfHex then
+        begin
+            Result := IntToHex(Value, 2); Exit;
+        end;
+        // Char
+        if Value >= 20 then
+            Result := Char(Value) + Char($0)
+        else
+            Result := '  ';
+    end;
+
+var
+    COL, OFF, SKIP: Integer;
+
+var
+    i: Integer; val: Byte;
+
+begin
+    Header();
+
+    // Calc initial parameters
+    COL := ADDRESS_SPACE;
+    OFF := (Offset div 16) + (ADDRESS_SPACE * (Offset div 16));
+    SKIP := (Offset mod 16);
+    if Limit <= 0 then Limit := MaxInt;
+
+    // Start printing
+    NewRow(OFF);
+    for i := Low(Source) to High(Source) do
+    begin
+
+        // Should we go to a new row?
+        if COL < 0 then
+        begin
+            OFF := OFF + ADDRESS_SPACE + 1;
+            NewRow(OFF);
+            COL := ADDRESS_SPACE;
+        end;
+        Dec(COL);
+
+        // Need to skip?
+        while SKIP > 0 do
+        begin
+            Write(EMPTY:3);
+            Dec(SKIP);
+            Dec(COL);
+        end;
+
+        // Print value
+        val := Source[i];
+        Write(MakeSymbol(val), CHAR_SPACE);
+        Dec(Limit);
+
+        // Should stop?
+        if Limit <= 0 then break;
+    end;
+    Writeln();
 end;
 
 end.
