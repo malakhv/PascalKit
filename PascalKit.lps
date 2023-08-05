@@ -15,7 +15,6 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="58"/>
         <CursorPos X="49" Y="107"/>
@@ -25,7 +24,7 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="52" Y="82"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
@@ -45,8 +44,18 @@
         <CursorPos X="47" Y="4"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="304"/>
+        <CursorPos X="23" Y="314"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="1">
+    <JumpHistory HistoryIndex="2">
       <Position>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <Caret Line="82" Column="52"/>
@@ -54,6 +63,10 @@
       <Position>
         <Filename Value="PascalKit.lpr"/>
         <Caret Line="25" Column="3" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
+        <Caret Line="107" Column="49" TopLine="58"/>
       </Position>
     </JumpHistory>
     <RunParams>

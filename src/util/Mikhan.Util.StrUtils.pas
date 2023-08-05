@@ -79,8 +79,14 @@ const
     { The special char: empty line. }
     CHAR_EMPTY_LINE = '\n\n';
 
-    { The special char: slash }
+    { The special char: slash. }
     CHAR_SLASH = '/';
+
+    { The special char: back slash. }
+    CHAR_BACK_SLASH = '\';
+
+    { The special char: vertical slash. }
+    CHAR_VERT_SLASH = '|';
 
 {
   Trims blank characters (spaces and control characters) at the beginning
