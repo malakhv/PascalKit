@@ -53,6 +53,10 @@ and limitations under the License."/>
         <Filename Value="src\util\Mikhan.Util.AppVersion.pas"/>
         <UnitName Value="Mikhan.Util.AppVersion"/>
       </Item>
+      <Item>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <UnitName Value="Mikhan.Util.AppLogs"/>
+      </Item>
     </Files>
     <RequiredPkgs>
       <Item>
