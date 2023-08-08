@@ -95,9 +95,6 @@ type
     { The base type of program commang line arguments. }
     TArgString = String;
 
-    { The array of program commang line arguments. }
-    TArgStrings = Array of TArgString;
-
 type
 
     {
@@ -231,7 +228,8 @@ end;
 
 function TArgument.IsOption: Boolean;
 begin
-    Result := HasLongPrefix(Self.Key) or HasShortPrefix(Self.Key);
+    //Result := HasShortPrefix(Self.Key) or HasLongPrefix(Self.Key);
+    Result := Mikhan.Util.AppArgs.IsOption(Self.Key);
 end;
 
 function TArgument.IsShort(): Boolean;
