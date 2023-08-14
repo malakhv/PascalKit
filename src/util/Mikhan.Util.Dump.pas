@@ -37,6 +37,10 @@ unit Mikhan.Util.Dump;
 {$mode delphi}
 {$h+}
 
+{-----------------------------------------------------------------------------------}
+{ Interface Section                                                                 }
+{-----------------------------------------------------------------------------------}
+
 Interface
  
 type
@@ -44,18 +48,26 @@ type
     { The formats of dump output, hex or char. }
     TDumpOutFormat = (dfHex, dfChar);
 
-    { Prints raw data in hexadecimal format. }
-    procedure Dump(const Source: Array of Byte); overload;
+{
+  Prints raw data in hexadecimal format.
+}
+procedure Dump(const Source: Array of Byte); overload;
     
-    { Prints raw data in hexadecimal format. }
-    procedure Dump(const Source: Array of Byte; Limit: Integer); overload;
+{
+  Prints raw data in hexadecimal format.
+}
+procedure Dump(const Source: Array of Byte; Limit: Integer); overload;
     
-    { Prints raw data in hexadecimal format. }
-    procedure Dump(const Source: Array of Byte; Offset, Limit: Integer); overload;
+{
+  Prints raw data in hexadecimal format.
+}
+procedure Dump(const Source: Array of Byte; Offset, Limit: Integer); overload;
     
-    { Prints raw data in hexadecimal or char format. }
-    procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
-        Format: TDumpOutFormat); overload;
+{
+  Prints raw data in hexadecimal or char format.
+}
+procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
+    Format: TDumpOutFormat); overload;
 
 {-----------------------------------------------------------------------------------}
 { Implementation Section                                                            }
