@@ -217,7 +217,7 @@ end;
 
 function TSemVer.ToString(): String;
 begin
-    Result := 'Version: ' + Name + ' (' + IntToStr(Code) + ')';
+    Result := 'Version ' + Name + ' (' + IntToStr(Code) + ')';
 end;
 
 end.
