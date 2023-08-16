@@ -142,6 +142,9 @@ type
         property Arguments[Index : Integer]: TArgument read Get; default;
         property Values[Index: Integer]: TArgString read GetValue;
 
+        { Returns true, if program call has no arguments. }
+        function IsEmpty(): Boolean;
+
         { Returns true if program has specified argument (or option). }
         function Has(const Key: TArgString): Boolean; overload;
         { Returns true if program has specified option in short or long format. }
@@ -276,6 +279,11 @@ end;
 function TAppArgs.GetCount(): Integer;
 begin
     Result := Length(FArguments);
+end;
+
+function TAppArgs.IsEmpty(): Boolean;
+begin
+    Result := Self.Count <= 0;
 end;
 
 function TAppArgs.Has(const Key: TArgString): Boolean; overload;
