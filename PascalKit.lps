@@ -8,8 +8,7 @@
       <Unit>
         <Filename Value="PascalKit.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="11"/>
-        <CursorPos X="21" Y="31"/>
+        <CursorPos X="6" Y="40"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -17,8 +16,7 @@
       <Unit>
         <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="106"/>
-        <CursorPos X="18" Y="125"/>
+        <CursorPos X="52" Y="158"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -26,9 +24,9 @@
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="339"/>
-        <CursorPos X="67" Y="247"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="147"/>
+        <CursorPos X="30" Y="160"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -49,7 +47,7 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="23" Y="314"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
@@ -57,19 +55,17 @@
       </Unit>
       <Unit>
         <Filename Value="C:\Programs\Lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysstrh.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="10" Y="105"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\Programs\Lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysstr.inc"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="731"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="730"/>
         <CursorPos X="3" Y="629"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="8">
@@ -90,10 +86,6 @@
         <Caret Line="125" Column="18" TopLine="106"/>
       </Position>
       <Position>
-        <Filename Value="C:\Programs\Lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysstrh.inc"/>
-        <Caret Line="105" Column="10" TopLine="89"/>
-      </Position>
-      <Position>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <Caret Line="99" Column="16" TopLine="86"/>
       </Position>
@@ -110,8 +102,8 @@
         <Caret Line="232" Column="37" TopLine="216"/>
       </Position>
       <Position>
-        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <Caret Line="106" Column="18" TopLine="90"/>
+        <Filename Value="src\util\Mikhan.Util.StrUtils.pas"/>
+        <Caret Line="125" Column="36" TopLine="115"/>
       </Position>
     </JumpHistory>
     <RunParams>
