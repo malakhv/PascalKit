@@ -9,3 +9,5 @@ Makefile*
 *.ppu
 *.pp
 *.compiled
+
+.DS_Store
