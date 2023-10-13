@@ -37,9 +37,9 @@ unit Mikhan.Util.Dump;
 {$mode delphi}
 {$h+}
 
-{-----------------------------------------------------------------------------------}
-{ Interface Section                                                                 }
-{-----------------------------------------------------------------------------------}
+{-------------------------------------------------------------------------}
+{ Interface Section                                                       }
+{-------------------------------------------------------------------------}
 
 Interface
  
@@ -61,7 +61,8 @@ procedure Dump(const Source: Array of Byte; Limit: Integer); overload;
 {
   Prints raw data in hexadecimal format.
 }
-procedure Dump(const Source: Array of Byte; Offset, Limit: Integer); overload;
+procedure Dump(const Source: Array of Byte; Offset, Limit: Integer);
+    overload;
     
 {
   Prints raw data in hexadecimal or char format.
@@ -69,9 +70,9 @@ procedure Dump(const Source: Array of Byte; Offset, Limit: Integer); overload;
 procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
     Format: TDumpOutFormat); overload;
 
-{-----------------------------------------------------------------------------------}
-{ Implementation Section                                                            }
-{-----------------------------------------------------------------------------------}
+{-------------------------------------------------------------------------}
+{ Implementation Section                                                  }
+{-------------------------------------------------------------------------}
 
 implementation
 
@@ -107,8 +108,9 @@ begin
     Dump(Source, Offset, Limit, dfHex);
 end;
 
-procedure Dump(const Source: Array of Byte; Offset,
-    Limit: Integer; Format: TDumpOutFormat);
+procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
+        Format: TDumpOutFormat);
+
 const ADDRESS_SPACE = $F;
 
     procedure Header();
@@ -177,6 +179,6 @@ end;
 
 end.
 
-{-----------------------------------------------------------------------------------}
-{ END                                                                               }
-{-----------------------------------------------------------------------------------}
+{-------------------------------------------------------------------------}
+{ END                                                                     }
+{-------------------------------------------------------------------------}
