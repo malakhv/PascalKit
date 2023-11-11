@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <TopLine Value="11"/>
         <CursorPos X="6" Y="40"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
@@ -19,16 +19,16 @@
         <EditorIndex Value="1"/>
         <TopLine Value="122"/>
         <CursorPos Y="117"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="397"/>
+        <TopLine Value="376"/>
         <CursorPos Y="425"/>
-        <UsageCount Value="13"/>
+        <UsageCount Value="14"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
@@ -48,10 +48,11 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="61"/>
-        <CursorPos X="22" Y="302"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="364"/>
+        <CursorPos Y="205"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
@@ -71,14 +72,15 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppVersion.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="61"/>
+        <CursorPos X="47" Y="13"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="10">
+    <JumpHistory HistoryIndex="14">
       <Position>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <Caret Line="82" Column="52"/>
@@ -122,6 +124,22 @@
       <Position>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
         <Caret Line="198" Column="50" TopLine="181"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <Caret Line="302" Column="22" TopLine="292"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <Caret Line="96" Column="19" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <Caret Line="91" Column="21" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
+        <Caret Line="92" Column="38" TopLine="75"/>
       </Position>
     </JumpHistory>
     <RunParams>
