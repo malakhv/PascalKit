@@ -299,16 +299,7 @@ begin
 end;
 
 procedure TAppLogs.Print(Level: TLogLevel; const Tag, Message: String);
-var prefix: String;
 begin
-    {if not IsLoggable(Level) then Exit;
-    //prefix := '';
-    prefix := LogLavelToStr(Level) + TAG_DELIMITER;
-    if HasAppTag then
-        prefix := AppTag + TAG_DELIMITER + prefix;
-    if not Mikhan.Util.StrUtils.isEmpty(Tag) then
-        prefix := prefix + Tag + TAG_DELIMITER;
-    Writeln(prefix, Message);}
     Self.Print(Level, Tag, Message);
 end;
 
@@ -323,7 +314,6 @@ var i: Integer;
     prefix: String;
 begin
     if not IsLoggable(Level) then Exit;
-    //prefix := '';
     prefix := LogLavelToStr(Level) + TAG_DELIMITER;
     if HasAppTag then
         prefix := AppTag + TAG_DELIMITER + prefix;
