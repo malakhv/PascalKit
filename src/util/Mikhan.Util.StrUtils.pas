@@ -73,8 +73,8 @@ const
     { The at sign. }
     CHAR_AT = '@';
 
-		{ The asterisk. }
-		CHAR_ASTERISK = '*';
+    { The asterisk. }
+    CHAR_ASTERISK = '*';
 
     { The special char: end of the line. }
     CHAR_NEW_LINE = '\n';
@@ -90,6 +90,9 @@ const
 
     { The special char: vertical slash. }
     CHAR_VERT_SLASH = '|';
+
+    { The tilde. }
+    CHAR_TILDE = '~';
 
 {
   Trims blank characters (spaces and control characters) at the beginning
