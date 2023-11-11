@@ -67,6 +67,9 @@ const
     { The greater-than sign. }
     CHAR_GREATER_THAN = '>';
 
+    { The number sign. }
+    CHAR_NUMBER = '#';
+
     { The question mark. }
     CHAR_QUESTION_MARK = '?';
 
