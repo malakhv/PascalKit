@@ -91,8 +91,11 @@ const
     { The special char: vertical slash. }
     CHAR_VERT_SLASH = '|';
 
-    { The tilde. }
+    { The tilde char. }
     CHAR_TILDE = '~';
+
+    { The section. }
+    CHAR_SECTION = '§';
 
 {
   Trims blank characters (spaces and control characters) at the beginning
