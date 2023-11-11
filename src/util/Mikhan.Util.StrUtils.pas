@@ -73,6 +73,9 @@ const
     { The at sign. }
     CHAR_AT = '@';
 
+		{ The asterisk. }
+		CHAR_ASTERISK = '*';
+
     { The special char: end of the line. }
     CHAR_NEW_LINE = '\n';
 
