@@ -80,6 +80,7 @@ uses SysUtils, Mikhan.Util.StrUtils;
 
 { Makes a symbol to output. }
 function MakeSymbol(Value: Integer; Format: TDumpOutFormat): String;
+const PLACEHOLDER = '..';
 begin
     // Hex
     if Format = dfHex then
@@ -90,7 +91,7 @@ begin
     if Value >= 20 then
         Result := Char(Value) + Char($0)
     else
-        Result := '  ';
+        Result := PLACEHOLDER;
 end;
 
 procedure Dump(const Source: Array of Byte);
