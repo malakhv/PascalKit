@@ -20,12 +20,13 @@
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{ [Unit synopsis. The Unit is needed for... And it contains stuff              }
-{ for...]                                                                      }
+{ Unit synopsis. A brief summary or general survey of this Unit. Why is Unit   }
+{ needed for? What does Unit contain?                                          }
 {                                                                              }
 { Project: PROJECT-NAME                                                        }
 { Package: Mikhan.Templates                                                    }
-{ Types: TType1, TType2                                                        }
+{ Types:   TType1, TType2                                                      }
+{                                                                              }
 { Dependencies: No                                                             }
 {                                                                              }
 { Created: 14.11.2023                                                          }
@@ -33,14 +34,16 @@
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{                                Unit Overview                                 }
+{                                   Overview                                   }
 {                                                                              }
-{ Any long description about this Unit...                                      }
+{ A general summary of Unit. An overview gives the big picture, while leaving  }
+{ out the minor details. You can use this section to leave any important and   }
+{ useful information. And sure, you can change head of this section.           }
 {                                                                              }
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{                             Common Definitions                               }
+{                                 Definitions                                  }
 {                                                                              }
 { Term1 -   Any description, definition and information, Any description,      }
 {           definition and information.                                        }
@@ -59,31 +62,91 @@ interface                                                  {~Interface Section~}
 
 uses SysUtils;
 
-
 { The group of constants }
 const
 
     { The constant 1. }
-    CONST_1 = 1;
+    UNIT_CONST_1 = 1;
 
     { The constant 2. }
-    CONST_1 = 2;
+    UNIT_CONST_2 = 2;
+
+type
+
+    {
+        An overview of new type. It can be short or long. Put here any
+        important and useful information about this type.
+    }
+    TTypeOne = 1..3;
+
+    { An overview of new type. Short format example. }
+    TTypeTwo = 1..3;
+
+type
+
+    {
+        An overview of new type. It can be short or long. Put here any
+        important and useful information about this type.
+    }
+    TTypeThree = class (TObject)
+    private
+        FValue: Integer;        // See Value property
+        { See Value property. }
+        function DoGetValue(): Integer;
+    protected
+        { See Value property. }
+        procedure DoSetValue(AValue: Integer);
+    public
+
+        { An overview of this property. It can be short or long. Put here any
+            important and useful information about this property. }
+        property Value: Integer read DoGetValue write DoSetValue;
+
+        { Construct a new instance of TTypeThree class with default
+          parameters. }
+        constructor Create(); virtual; overload;
+
+        { Construct a new instance of TTypeThree class with specified
+          parameters. }
+        constructor Create(Value: Integer); virtual; overload;
+
+        { Free all related resources. }
+        destructor Destroy(); virtual;
+    end;
 
 { Global Scope }
 var
     GlobalVar: Byte;    // This is a global variable
 
-{
-    The type for. The type for. The type for. The type for. The type
-    for. The type for.
-}
+{------------------------------------------------------------------------------}
+{                                   Section 1                                  }
+{                                                                              }
+{ An overview of section 1. Any important and useful information about stuff   }
+{ in this section. Each section may contains constants, variables and types    }
+{ definitions. This is a logical block into the Unit. You can specify the name }
+{ of this section.                                                             }
+{                                                                              }
+{------------------------------------------------------------------------------}
+
+{ The group of constants }
+const
+
+    { The constant 1. }
+    SECTION_1_CONST_1 = 1;
+
+    { The constant 2. }
+    SECTION_1_CONST_2 = 2;
+
 type
-    TType1 = 1..3;
+    TSectionType1 = 1..3;
 
 {------------------------------------------------------------------------------}
-{                             Unit Section 1                                   }
+{                                   Section 2                                  }
 {                                                                              }
-{ Any long description about this Unit's section..                             }
+{ An overview of section s. Any important and useful information about stuff   }
+{ in this section. Each section may contains constants, variables and types    }
+{ definitions. This is a logical block into the Unit. You can specify the name }
+{ of this section.                                                             }
 {                                                                              }
 {------------------------------------------------------------------------------}
 
@@ -124,6 +187,9 @@ end;
 { TType2                                                                       }
 {------------------------------------------------------------------------------}
 
-{------------------------------------------------------------------------------}
-{~END                                                                          }
+
+
+
+end.                                                                     {~End~}
+
 {------------------------------------------------------------------------------}
