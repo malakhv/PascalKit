@@ -53,12 +53,12 @@
 {                                                                              }
 {------------------------------------------------------------------------------}
 
-unit Mikhan.Templates.MyUnit                                            {~Unit~}
+unit Mikhan.Templates.MyUnit                                            { UNIT }
 
 {$mode DELPHI}
 {$H+}
 
-interface                                                  {~Interface Section~}
+interface                                                          { INTERFACE }
 
 uses SysUtils;
 
@@ -151,7 +151,7 @@ type
 {------------------------------------------------------------------------------}
 
 
-implementation                                        {~Implementation Section~}
+implementation                                                { IMPLEMENTETION }
 
 {------------------------------------------------------------------------------}
 { Common                                                                       }
@@ -190,6 +190,6 @@ end;
 
 
 
-end.                                                                     {~End~}
+end.                                                                     { END }
 
 {------------------------------------------------------------------------------}
