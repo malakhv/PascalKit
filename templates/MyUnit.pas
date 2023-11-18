@@ -180,14 +180,49 @@ begin
 end;
 
 {------------------------------------------------------------------------------}
-{ TType1                                                                       }
+{ TTypeThree                                                                   }
 {------------------------------------------------------------------------------}
+
+{ The group of constants that using only in TTypeThree }
+const
+    INTERNAL_CONST_FOR_TTYPETHREE =1;
+
+
+{ The variables that using only in TTypeThree }
+var
+    TypeThreeInt: Integer;  // This is a variable
+
+{ The integral procedure that using only in TTypeThree. }
+procedure Three();
+begin
+
+end;
+
+constructor TTypeThree.Create();
+begin
+
+end;
+
+destructor TTypeThree.Create();
+begin
+
+end;
+
+function TTypeThree.DoGetValue(): Integer;
+begin
+    Three();
+    Result := FValue;
+end;
+
+procedure TTypeThree.DoSetValue(AValue: Integer);
+begin
+    FValue := AValue;
+    Three();
+end;
 
 {------------------------------------------------------------------------------}
 { TType2                                                                       }
 {------------------------------------------------------------------------------}
-
-
 
 
 end.                                                                     { END }
