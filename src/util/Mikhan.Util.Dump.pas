@@ -88,8 +88,8 @@ begin
         Result := IntToHex(Value, 2); Exit;
     end;
     // Char
-    if Value >= 20 then
-        Result := Char(Value) + Char($0)
+    if (Value >= $20) and (Value <= $7E) then
+        Result := Char(Value) + ' ' //Char($20)
     else
         Result := PLACEHOLDER;
 end;
