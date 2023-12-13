@@ -103,11 +103,11 @@ type
         property Value: Integer read DoGetValue write DoSetValue;
 
         { Construct a new instance of TTypeThree class with default
-          parameters. }
+            parameters. }
         constructor Create(); virtual; overload;
 
         { Construct a new instance of TTypeThree class with specified
-          parameters. }
+            parameters. }
         constructor Create(Value: Integer); virtual; overload;
 
         { Free all related resources. }

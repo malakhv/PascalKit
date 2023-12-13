@@ -1,52 +1,55 @@
-{-------------------------------------------------------------------------}
-{                                                                         }
-{                      Pascal Utils Library (PUL)                         }
-{                                                                         }
-{  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>           }
-{                                                                         }
-{  Licensed under the Apache License, Version 2.0 (the "License").        }
-{  You may not use this file except in compliance with the License.       }
-{  You may obtain a copy of the License at                                }
-{                                                                         }
-{     http://www.apache.org/licenses/LICENSE-2.0                          }
-{                                                                         }
-{  Unless required by applicable law or agreed to in writing, software    }
-{  distributed under the License is distributed on an "AS IS" BASIS,      }
-{  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or        }
-{  implied.                                                               }
-{                                                                         }
-{  See the License for the specific language governing permissions and    }
-{  limitations under the License.                                         }
-{                                                                         }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{                                                                              }
+{                          Pascal Utils Library (PUL)                          }
+{                                                                              }
+{  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>                }
+{                                                                              }
+{  Licensed under the Apache License, Version 2.0 (the "License"). You may     }
+{  not use this file except in compliance with the License. You may obtain     }
+{  a copy of the License at                                                    }
+{                                                                              }
+{     http://www.apache.org/licenses/LICENSE-2.0                               }
+{                                                                              }
+{  Unless required by applicable law or agreed to in writing, software         }
+{  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT   }
+{  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.            }
+{                                                                              }
+{  See the License for the specific language governing permissions and         }
+{  limitations under the License.                                              }
+{                                                                              }
+{------------------------------------------------------------------------------}
 
-{-------------------------------------------------------------------------}
-{ The Unit contains types, methods and classes to working with program    }
-{ command line (input) arguments.                                         }
-{                                                                         }
-{ Package: Mikhan.Util                                                    }
-{ Types: TAppParams                                                       }
-{ Dependencies: Mikhan.Util.StrUtils                                      }
-{                                                                         }
-{ Created: 17.08.2022                                                     }
-{ Author: Mikhail.Malakhov                                                }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ The Unit contains types, methods and classes to working with program command }
+{ line (input) arguments.                                                      }
+{                                                                              }
+{ Project: Pascal Utils Library (PUL)                                          }
+{ Package: Mikhan.Util                                                         }
+{ Types: TAppParams                                                            }
+{                                                                              }
+{ Dependencies: Mikhan.Util.StrUtils                                           }
+{                                                                              }
+{ Created: 17.08.2022                                                          }
+{ Authors: Mikhail.Malakhov                                                    }
+{------------------------------------------------------------------------------}
 
-{-------------------------------------------------------------------------}
-{ There are three types of program command line arguments:                }
-{   - simple option or flag (short or long format) without any data, for  }
-{     example: -l, --help                                                 }
-{   - option (short or long format) with value (key-value pair), for      }
-{     example: -t "Text", --file ./file1.txt                              }
-{   - program argument or command, for example: clone, status             }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{                        Program Command Line Arguments                        }
+{                                                                              }
+{ There are three types of program command line arguments:                     }
+{   - simple option or flag (short or long format) without any data, for       }
+{     example: -l, --help                                                      }
+{   - option (short or long format) with value (key-value pair), for example:  }
+{     -t "Text", --file ./file1.txt                                            }
+{   - program argument or command, for example: clone, status                  }
+{------------------------------------------------------------------------------}
 
-unit Mikhan.Util.AppArgs;
+unit Mikhan.Util.AppArgs;                                               { UNIT }
 
 {$mode delphi}
 {$h+}
 
-Interface
+Interface                                                          { INTERFACE }
 
 const
 
@@ -56,6 +59,9 @@ const
     { Option prefix: long format. }
     OPT_PREFIX_LONG = '--';
 
+{
+    Common program options
+}
 const
 
     { Program option: List, short format. }
@@ -88,8 +94,8 @@ const
     { Program option: Status, long format. }
     OPTION_VERSION_LONG = OPT_PREFIX_LONG + 'version';
 
-    { Program option: Verbose (turning on all log messages),
-        this option has only long format. }
+    { Program option: Verbose (turning on all log messages), this option has
+        only long format. }
     OPTION_VERBOSE_LONG = OPT_PREFIX_LONG + 'verbose';
 
 type
@@ -130,8 +136,8 @@ type
         { The program file name with full path.}
         FName: TArgString;
 
-        { Program command line arguments and options (in short and
-            long format). }
+        { Program command line arguments and options (in short and long
+            format). }
         FArguments: TArguments;
 
     protected
@@ -170,19 +176,19 @@ type
         { Returns true if program has Help option (-h or --help). }
         function HasHelp(): Boolean;
 
-        { Returns true if program has Version option (see
-            OPTION_VERSION_* constants). }
+        { Returns true if program has Version option (see OPTION_VERSION_*
+            constants). }
         function HasVersion(): Boolean;
 
-        { Returns true if program has Verbose option (see
-            OPTION_VERBOSE_* constants). }
+        { Returns true if program has Verbose option (see OPTION_VERBOSE_*
+            constants). }
         function HasVerbose(): Boolean;
 
         { Returns value for specified option, or empty string. }
         function GetValue(const Key: TArgString): TArgString; overload;
 
-        { Returns value for specified option (in short and long format),
-            or empty string. }
+        { Returns value for specified option (in short and long format), or
+            empty string. }
         function GetValue(const Short, Long: TArgString):
             TArgString; overload;
 
@@ -199,16 +205,13 @@ type
         destructor Destroy; override;
     end;
 
-{-------------------------------------------------------------------------}
-{ Implementation section                                                  }
-{-------------------------------------------------------------------------}
-implementation
+implementation                                                { IMPLEMENTETION }
 
 uses Mikhan.Util.StrUtils;
 
-{-------------------------------------------------------------------------}
-{ Common things                                                           }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ Common                                                                       }
+{------------------------------------------------------------------------------}
 
 const
     STR_EMPTY = Mikhan.Util.StrUtils.EMPTY;
@@ -250,9 +253,9 @@ begin
     Result := FindArgument(Key, STR_EMPTY, Target);
 end;
 
-{-------------------------------------------------------------------------}
-{ TArgument implementation                                                }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ TArgument                                                                    }
+{------------------------------------------------------------------------------}
 
 function TArgument.IsOption: Boolean;
 begin
@@ -280,9 +283,9 @@ begin
     Result := not Mikhan.Util.StrUtils.IsEmpty(Self.Value);
 end;
 
-{-------------------------------------------------------------------------}
-{ TAppArgs implementation                                                 }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ TAppArgs                                                                     }
+{------------------------------------------------------------------------------}
 
 constructor TAppArgs.Create;
 begin
@@ -420,9 +423,6 @@ begin
     end;
 end;
 
-end.
+end.                                                                     { END }
 
-{-------------------------------------------------------------------------}
-{ END                                                                     }
-{-------------------------------------------------------------------------}
-
+{------------------------------------------------------------------------------}
