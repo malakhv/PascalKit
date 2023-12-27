@@ -8,10 +8,10 @@
       <Unit>
         <Filename Value="PascalKit.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="11"/>
-        <CursorPos X="6" Y="40"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos Y="40"/>
         <UsageCount Value="26"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -46,8 +46,8 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="363"/>
         <CursorPos X="70" Y="367"/>
         <UsageCount Value="13"/>
@@ -76,9 +76,6 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
     <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>

@@ -9,7 +9,7 @@ interface
 
 uses
   Mikhan.Util.StrUtils, Mikhan.Util.AppArgs, Mikhan.Util.AppVersion, 
-  Mikhan.Util.AppLogs, LazarusPackageIntf;
+  Mikhan.Util.AppLogs, Mikhan.Util.Dump, LazarusPackageIntf;
 
 implementation
 
