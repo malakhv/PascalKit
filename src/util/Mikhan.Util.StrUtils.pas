@@ -1,43 +1,47 @@
-{-------------------------------------------------------------------------}
-{                                                                         }
-{                      Pascal Utils Library (PUL)                         }
-{                                                                         }
-{  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>           }
-{                                                                         }
-{  Licensed under the Apache License, Version 2.0 (the "License").        }
-{  You may not use this file except in compliance with the License.       }
-{  You may obtain a copy of the License at                                }
-{                                                                         }
-{     http://www.apache.org/licenses/LICENSE-2.0                          }
-{                                                                         }
-{  Unless required by applicable law or agreed to in writing, software    }
-{  distributed under the License is distributed on an "AS IS" BASIS,      }
-{  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or        }
-{  implied.                                                               }
-{                                                                         }
-{  See the License for the specific language governing permissions and    }
-{  limitations under the License.                                         }
-{                                                                         }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{                                                                              }
+{                          Pascal Utils Library (PUL)                          }
+{                                                                              }
+{  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>                }
+{                                                                              }
+{  Licensed under the Apache License, Version 2.0 (the "License"). You may     }
+{  not use this file except in compliance with the License. You may obtain     }
+{  a copy of the License at                                                    }
+{                                                                              }
+{     http://www.apache.org/licenses/LICENSE-2.0                               }
+{                                                                              }
+{  Unless required by applicable law or agreed to in writing, software         }
+{  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT   }
+{  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.            }
+{                                                                              }
+{  See the License for the specific language governing permissions and         }
+{  limitations under the License.                                              }
+{                                                                              }
+{------------------------------------------------------------------------------}
 
-{-------------------------------------------------------------------------}
-{ The Unit contains constants and methods to working with strings.        }
-{                                                                         }
-{ Package: Mikhan.Util                                                    }
-{ Types: No                                                               }
-{ Dependencies: No                                                        }
-{                                                                         }
-{ Created: 15.08.2022                                                     }
-{ Author: Mikhail.Malakhov                                                }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ The Unit contains methods to working with strings.                           }
+{                                                                              }
+{ Project: Pascal Utils Library (PUL)                                          }
+{ Package: Mikhan.Util                                                         }
+{ Types: No                                                                    }
+{                                                                              }
+{ Dependencies: No                                                             }
+{                                                                              }
+{ Created: 15.08.2022                                                          }
+{ Authors: Mikhail.Malakhov                                                    }
+{------------------------------------------------------------------------------}
 
-unit Mikhan.Util.StrUtils;
+Unit Mikhan.Util.StrUtils;                                              { UNIT }
 
 {$mode delphi}
 {$h+}
 
-Interface
+Interface                                                          { INTERFACE }
 
+{
+    Some character constants
+}
 const
 
     { The empty string. }
@@ -100,38 +104,24 @@ const
     { The section. }
     CHAR_SECTION = '§';
 
-{
-  Trims blank characters (spaces and control characters) at the beginning
-  and the end of the specified string.
-}
+{ Trims blank characters (spaces and control characters) at the beginning and
+    the end of the specified string. }
 procedure TrimStr(var Source: String);
 
-{
-  Returns True if the string is null, 0-length, or this string contains
-  only whitespaces.
-}
+{ Returns True if the string is null, 0-length, or this string contains only
+    whitespaces. }
 function IsEmpty(const Source: String): Boolean;
 
-{
-  Returns true, if string S starts with specified Prefix.
-}
+{ Returns true, if string S starts with specified Prefix. }
 function StartWith(const Prefix, S: String): Boolean;
 
-{
-  Converts an array of bytes to string.
-}
+{ Converts an array of bytes to string. }
 function BytesToStr(const Source: Array of Byte): String;
 
-{
-  Repeats source string specified times.
-}
+{ Repeats source string the specified number of times. }
 function RepeatString(const Source: String; Count: Integer): String;
 
-{-------------------------------------------------------------------------}
-{ Implementation section                                                  }
-{-------------------------------------------------------------------------}
-
-Implementation
+Implementation                                                { IMPLEMENTETION }
 
 uses SysUtils;
 
@@ -149,8 +139,7 @@ function StartWith(const Prefix, S: String): Boolean;
 begin
     if IsEmpty(S) or IsEmpty(Prefix) or (Length(Prefix) > Length(S)) then
     begin
-        Result := False;
-        Exit;
+        Result := False; Exit;
     end;
     Result := pos(Prefix, S) = 1;
 end;
@@ -174,4 +163,4 @@ begin
         Move(Source[1], Result[len*i+1], len);
 end;
 
-end.
+end.                                                                     { END }
