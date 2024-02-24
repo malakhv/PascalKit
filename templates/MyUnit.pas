@@ -1,6 +1,6 @@
 {------------------------------------------------------------------------------}
 {                                                                              }
-{                             PROJECT-NAME project                             }
+{                             PROJECT-NAME Project                             }
 {                                                                              }
 {  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>                }
 {                                                                              }
@@ -151,7 +151,7 @@ type
 {------------------------------------------------------------------------------}
 
 
-implementation                                                { IMPLEMENTETION }
+implementation                                                { IMPLEMENTATION }
 
 {------------------------------------------------------------------------------}
 { Common                                                                       }
