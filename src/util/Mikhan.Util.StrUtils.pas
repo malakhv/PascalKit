@@ -47,8 +47,14 @@ const
     { The empty string. }
     EMPTY = '';
 
+    { The nil character. }
+    CHAR_NIL = #0;
+
     { The space character. }
     CHAR_SPACE = ' ';
+
+    { The tab character. }
+    CHAR_TAB = #9;
 
     { The dot character. }
     CHAR_DOT = '.';
