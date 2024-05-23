@@ -34,7 +34,7 @@
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{                                   Overview                                   }
+{                                  Overview                                    }
 {                                                                              }
 { A general summary of Unit. An overview gives the big picture, while leaving  }
 { out the minor details. You can use this section to leave any important and   }
@@ -53,12 +53,12 @@
 {                                                                              }
 {------------------------------------------------------------------------------}
 
-unit Mikhan.Templates.MyUnit                                            { UNIT }
+UNIT Mikhan.Templates.MyUnit                                            { UNIT }
 
-{$mode DELPHI}
+{$MODE DELPHI}
 {$H+}
 
-interface                                                          { INTERFACE }
+INTERFACE                                                          { INTERFACE }
 
 uses SysUtils;
 
@@ -131,10 +131,10 @@ var
 { The group of constants }
 const
 
-    { The constant 1. }
+    { The constant 1 into section 1. }
     SECTION_1_CONST_1 = 1;
 
-    { The constant 2. }
+    { The constant 2 into section 1. }
     SECTION_1_CONST_2 = 2;
 
 type
@@ -150,14 +150,21 @@ type
 {                                                                              }
 {------------------------------------------------------------------------------}
 
+{ The group of constants }
+const
 
-implementation                                                { IMPLEMENTATION }
+    { The constant 1 into section 2. }
+    SECTION_2_CONST_1 = 1;
+
+{------------------------------------------------------------------------------}
+
+IMPLEMENTATION                                                { IMPLEMENTATION }
 
 {------------------------------------------------------------------------------}
 { Common                                                                       }
 {------------------------------------------------------------------------------}
 
-{ The group of constants }
+{ The group of internal constants }
 const
 
     { The internal constant 1. }
@@ -192,7 +199,7 @@ const
 var
     TypeThreeInt: Integer;  // This is a variable
 
-{ The integral procedure that using only in TTypeThree. }
+{ The internal procedure that using only in TTypeThree. }
 procedure Three();
 begin
 
@@ -224,7 +231,6 @@ end;
 { TType2                                                                       }
 {------------------------------------------------------------------------------}
 
-
-end.                                                                     { END }
+END.                                                                     { END }
 
 {------------------------------------------------------------------------------}
