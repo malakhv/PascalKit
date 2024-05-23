@@ -25,9 +25,9 @@
 {                                                                              }
 { Project: PROJECT-NAME                                                        }
 { Package: Mikhan.Templates                                                    }
-{ Types:   TType1, TType2                                                      }
 {                                                                              }
 { Dependencies: No                                                             }
+{ Operating Systems: Win, Linux, MacOs                                         }
 {                                                                              }
 { Created: 14.11.2023                                                          }
 { Authors: Mikhail.Malakhov [malakhv@gmail.com|http://mikhan.me/]              }
