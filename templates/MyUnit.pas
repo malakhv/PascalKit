@@ -2,7 +2,7 @@
 {                                                                              }
 {                             PROJECT-NAME Project                             }
 {                                                                              }
-{  Copyright (C) 1996-2023 Mikhail Malakhov <malakhv@gmail.com>                }
+{  Copyright (C) 1996-2024 Mikhail Malakhov <malakhv@gmail.com>                }
 {                                                                              }
 {  Licensed under the Apache License, Version 2.0 (the "License"). You may     }
 {  not use this file except in compliance with the License. You may obtain     }
@@ -75,7 +75,7 @@ type
 
     {
         An overview of new type. It can be short or long. Put here any
-        important and useful information about this type.
+        important and useful information about this type. Long format example.
     }
     TTypeOne = 1..3;
 
@@ -99,15 +99,15 @@ type
     public
 
         { An overview of this property. It can be short or long. Put here any
-            important and useful information about this property. }
+          important and useful information about this property. }
         property Value: Integer read DoGetValue write DoSetValue;
 
         { Construct a new instance of TTypeThree class with default
-            parameters. }
+          parameters. }
         constructor Create(); virtual; overload;
 
         { Construct a new instance of TTypeThree class with specified
-            parameters. }
+          parameters. }
         constructor Create(Value: Integer); virtual; overload;
 
         { Free all related resources. }
@@ -217,12 +217,15 @@ end;
 
 function TTypeThree.DoGetValue(): Integer;
 begin
+    // TODO: The DODO example
     Three();
     Result := FValue;
 end;
 
 procedure TTypeThree.DoSetValue(AValue: Integer);
 begin
+    // Internal comment inside function or procedure. It can be in one line
+    // or multiline.
     FValue := AValue;
     Three();
 end;
