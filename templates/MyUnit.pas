@@ -99,7 +99,9 @@ type
     public
 
         { An overview of this property. It can be short or long. Put here any
-          important and useful information about this property. }
+          important and useful information about this property.
+
+          In this description you may want to have one or several lines. }
         property Value: Integer read DoGetValue write DoSetValue;
 
         { Construct a new instance of TTypeThree class with default
@@ -210,14 +212,15 @@ begin
 
 end;
 
-destructor TTypeThree.Create();
+destructor TTypeThree.Destroy();
 begin
 
 end;
 
 function TTypeThree.DoGetValue(): Integer;
 begin
-    // TODO: The DODO example
+    // TODO: The TODO example. It can be in one line
+    //       or multiline.
     Three();
     Result := FValue;
 end;
