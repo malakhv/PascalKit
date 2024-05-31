@@ -20,8 +20,8 @@
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{ Program short description. A brief summary or general survey of this         }
-{ Program. What the program does and why it is needed.                         }
+{ Program or Project short description. A brief summary or general survey of   }
+{ this Program. What the program does and why it is needed.                    }
 {                                                                              }
 { Project: PROJECT-NAME                                                        }
 { Package: Mikhan.Templates                                                    }

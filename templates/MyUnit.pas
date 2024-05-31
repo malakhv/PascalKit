@@ -158,6 +158,43 @@ const
     { The constant 1 into section 2. }
     SECTION_2_CONST_1 = 1;
 
+{ The global function in section 2. }
+function IfExample(Value: Integer): Boolean;
+begin
+
+    // Only if statement, one line
+    if Value > 0 then Result := 0;
+
+    // Only if statement, two lines
+    if Value > 0 then
+    begin
+        Result := 0;
+    end;
+
+    // if ... else, one line
+    if Value > 0 then Result := 0 else Result := 1;
+
+    // if ... else
+    if Value > 0 then
+    begin
+        Result := 1;
+    end else
+    begin
+        Result := 0;
+    end;
+
+    // Several statements
+    if Value = 1 then
+    begin
+        Result := 0;
+    end
+    else if Value = 2 then
+        begin
+            Result := 1;
+        end;
+
+end;
+
 {------------------------------------------------------------------------------}
 
 IMPLEMENTATION                                                { IMPLEMENTATION }
