@@ -45,11 +45,11 @@
 {------------------------------------------------------------------------------}
 {                                 Definitions                                  }
 {                                                                              }
-{ Term1 -   Any description, definition and information, Any description,      }
-{           definition and information.                                        }
+{ Term1 -   Any description, definition and information about this definition  }
+{           or abbreviation.                                                   }
 {                                                                              }
-{ Term2 -   Any description, definition and information, Any description,      }
-{           definition and information.                                        }
+{ Term2 -   Any description, definition and information about this definition  }
+{           or abbreviation.                                                   }
 {                                                                              }
 {------------------------------------------------------------------------------}
 
