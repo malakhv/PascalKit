@@ -27,9 +27,9 @@
 { Package: Mikhan.Templates                                                    }
 { Types:   TType1, TType2                                                      }
 {                                                                              }
-{ Dependencies: No                                                             }
+{ Dependencies: NO                                                             }
 {                                                                              }
-{ Created: 14.11.2023                                                          }
+{ Created: [DATE]                                                              }
 { Authors: Mikhail.Malakhov [malakhv@gmail.com|http://mikhan.me/]              }
 {------------------------------------------------------------------------------}
 
@@ -57,6 +57,7 @@ UNIT Mikhan.Templates.MyUnit                                            { UNIT }
 
 {$MODE DELPHI}
 {$H+}
+{$T+}
 
 INTERFACE                                                          { INTERFACE }
 
