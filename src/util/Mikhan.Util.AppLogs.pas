@@ -19,40 +19,35 @@
 {                                                                              }
 {------------------------------------------------------------------------------}
 
-{-------------------------------------------------------------------------}
-{ The Unit contains types, methods and classes to working with program    }
-{ log.                                                                    }
-{                                                                         }
-{ Package: Mikhan.Util                                                    }
-{ Types: TAppLogs, TLogLevel                                              }
-{ Dependencies: Mikhan.Util.StrUtils                                      }
-{                                                                         }
-{ Created: 14.08.2022                                                     }
-{ Author: Mikhail.Malakhov                                                }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ The Unit contains types, methods and classes to working with program log.    }                                                                    }
+{                                                                              }
+{ Package: Mikhan.Util                                                         }
+{ Types: TAppLogs, TLogLevel                                                   }
+{ Dependencies: Mikhan.Util.StrUtils                                           }
+{                                                                              }
+{ Created: 14.08.2022                                                          }
+{ Author: Mikhail.Malakhov                                                     }
+{------------------------------------------------------------------------------}
 
-unit Mikhan.Util.AppLogs;
+UNIT Mikhan.Util.AppLogs;                                               { UNIT }
 
-{$mode delphi}
-{$h+}
+{$MODE DELPHI}
+{$H+}
 
-Interface
+INTERFACE                                                          { INTERFACE }
 
 type
 
     { The available logging levels. }
     TLogLevel = (
-        
-        { Logging level: Not inportant information, only for development
-            time. }
+        { Logging level: Not inportant information, only for development time. }
         llVerbose,
         
-        { Logging level: Information only for development, debugging and
-            testing time. }
+        { Logging level: Information only for development, debugging, testing. }
         llDebug,
         
-        { Logging level: Any important information for release
-            lifecycle. }
+        { Logging level: Any important information for release lifecycle. }
         llInfo,
         
         { Logging level: Program warnings. }
@@ -61,8 +56,8 @@ type
         { Logging level: Program errors and critical messages. }
         llError,
         
-        { Logging level: Silent mode, turning off all messages. In normal
-            case program shouldn't use it to write a messages. }
+        { Logging level: Silent mode, turning off all messages. In normal case
+          program shouldn't use it to write a messages. }
         llSilent
     );
 
@@ -85,23 +80,17 @@ type
         { Setter for LogLevel property }
         procedure DoSetLogLevel(LogLevel: TLogLevel); virtual;
 
-        { Low-level logging call. Print a message with specified
-            parameters. }
-        procedure Print(Level: TLogLevel;
-            const Message: String); overload;
+        { Low-level logging call. Print a message with specified parameters. }
+        procedure Print(Level: TLogLevel; const Message: String); overload;
 
-        { Low-level logging call. Print a message with specified
-            parameters. }
-        procedure Print(Level: TLogLevel;
-            const Tag, Message: String); overload;
+        { Low-level logging call. Print a message with specified parameters. }
+        procedure Print(Level: TLogLevel; const Tag, Message: String); overload;
 
-        { Low-level logging call. Print a messages with specified
-            parameters. }
+        { Low-level logging call. Print a messages with specified parameters. }
         procedure Print(Level: TLogLevel;
             const Messages: array of const); overload;
 
-        { Low-level logging call. Print a messages with specified
-            parameters. }
+        { Low-level logging call. Print a messages with specified parameters. }
         procedure Print(Level: TLogLevel; const Tag: String;
             const Messages: array of const); overload;
 
@@ -120,53 +109,47 @@ type
         { Sends a verbose log message with main program tag. }
         procedure V(const Message: String); overload;
 
-        { Sends a verbose log message with main program tag and specified
-            tag. }
+        { Sends a verbose log message with main program tag and specified tag. }
         procedure V(const Tag: String; const Message: String); overload;
 
         { Sends a verbose log messages with main program tag. }
         procedure V(const Messages: array of const); overload;
 
         { Sends a verbose log messages with main program tag and specified
-            tag. }
+          tag. }
         procedure V(const Tag: String;
             const Messages: array of const); overload;
 
         { Sends a debug log message with main program tag. }
         procedure D(const Message: String); overload;
 
-        { Sends a debug log message with main program tag and specified
-            tag. }
+        { Sends a debug log message with main program tag and specified tag. }
         procedure D(const Tag: String; const Message: String); overload;
 
         { Sends a debug log messages with main program tag. }
         procedure D(const Messages: array of const); overload;
 
-        { Sends a debug log messages with main program tag and specified
-            tag. }
+        { Sends a debug log messages with main program tag and specified tag. }
         procedure D(const Tag: String;
             const Messages: array of const); overload;
 
         { Sends a info log message with main program tag. }
         procedure I(const Message: String); overload;
 
-        { Sends a info log message with main program tag and specified
-            tag. }
+        { Sends a info log message with main program tag and specified tag. }
         procedure I(const Tag: String; const Message: String); overload;
 
         { Sends a info log messages with main program tag. }
         procedure I(const Messages: array of const); overload;
 
-        { Sends a info log messages with main program tag and specified
-            tag. }
+        { Sends a info log messages with main program tag and specified tag. }
         procedure I(const Tag: String;
             const Messages: array of const); overload;
 
         { Sends a warning log message with main program tag. }
         procedure W(const Message: String); overload;
 
-        { Sends a warning log message with main program tag and specified
-            tag. }
+        { Sends a warning log message with main program tag and specified tag. }
         procedure W(const Tag: String; const Message: String); overload;
 
         { Sends a warning log messages with main program tag. }
@@ -180,34 +163,30 @@ type
         { Sends a error log message with main program tag. }
         procedure E(const Message: String); overload;
 
-        { Sends a error log message with main program tag and specified
-            tag. }
+        { Sends a error log message with main program tag and specified tag. }
         procedure E(const Tag: String; const Message: String); overload;
 
         { Sends a error log messages with main program tag. }
         procedure E(const Messages: array of const); overload;
 
-        { Sends a error log messages with main program tag and specified
-            tag. }
+        { Sends a error log messages with main program tag and specified tag. }
         procedure E(const Tag: String;
             const Messages: array of const); overload;
 
         { Construct a new instance of TAppLogs class with specified
-            parameters. }
+          parameters. }
         constructor Create(AppTag: String); overload;
 
         { Construct a new instance of TAppLogs class with specified
-            parameters. }
+          parameters. }
         constructor Create(AppTag: String; Debug: Boolean); overload;
 
         destructor Destroy; override;
     end;
 
-{-------------------------------------------------------------------------}
-{ Implementation section                                                  }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
 
-Implementation
+IMPLEMENTATION                                                { IMPLEMENTATION }
 
 uses SysUtils, Mikhan.Util.StrUtils;
 

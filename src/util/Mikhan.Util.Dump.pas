@@ -19,28 +19,24 @@
 {                                                                              }
 {------------------------------------------------------------------------------}
 
-{--------------------------------------------------------------------}
-{ The Unit contains methods to print raw data in hexadecimal format  }
-{ (dump, like in hex editors).                                       }
-{                                                                    }
-{ Package: Mikhan.Util                                               }
-{ Types: TAppLogs, TLogLevel                                         }
-{ Dependencies: Mikhan.Util.StrUtils                                 }
-{                                                                    }
-{ Created: 14.08.2023                                                }
-{ Author: Mikhail.Malakhov                                           }
-{--------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
+{ The Unit contains methods to print raw data in hexadecimal format (dump,     }
+{ like in hex editors).                                                        }
+{                                                                              }
+{ Package: Mikhan.Util                                                         }
+{ Types: TAppLogs, TLogLevel                                                   }
+{ Dependencies: Mikhan.Util.StrUtils                                           }
+{                                                                              }
+{ Created: 14.08.2023                                                          }
+{ Author: Mikhail.Malakhov                                                     }
+{------------------------------------------------------------------------------}
 
 unit Mikhan.Util.Dump;
 
-{$mode delphi}
-{$h+}
+{$MODE DELPHI}
+{$H+}
 
-{-------------------------------------------------------------------------}
-{ Interface Section                                                       }
-{-------------------------------------------------------------------------}
-
-Interface
+INTERFACE                                                          { INTERFACE }
  
 type
 
@@ -69,11 +65,11 @@ procedure Dump(const Source: Array of Byte; Offset, Limit: Integer);
 procedure Dump(const Source: Array of Byte; Offset, Limit: Integer;
     Format: TDumpOutFormat); overload;
 
-{-------------------------------------------------------------------------}
-{ Implementation Section                                                  }
-{-------------------------------------------------------------------------}
+{------------------------------------------------------------------------------}
 
-implementation
+IMPLEMENTATION                                                { IMPLEMENTATION }
+
+{------------------------------------------------------------------------------}
 
 uses SysUtils, Mikhan.Util.StrUtils;
 

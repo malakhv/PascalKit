@@ -44,12 +44,12 @@
 {   - program argument or command, for example: clone, status                  }
 {------------------------------------------------------------------------------}
 
-unit Mikhan.Util.AppArgs;                                               { UNIT }
+UNIT Mikhan.Util.AppArgs;                                               { UNIT }
 
-{$mode delphi}
-{$h+}
+{$MODE DELPHI}
+{$H+}
 
-Interface                                                          { INTERFACE }
+INTERFACE                                                          { INTERFACE }
 
 const
 
@@ -107,9 +107,7 @@ type
 
 type
 
-    {
-      A program argument or option (in short or long format).
-    }
+    { A program argument or option (in short or long format). }
     TArgument = record
         Key: TArgString;
         Value: TArgString;
@@ -120,9 +118,7 @@ type
         function HasValue(): Boolean;
     end;
 
-    {
-      The list of program arguments and options (in short or long format).
-    }
+    { The list of program arguments and options (in short or long format). }
     TArguments = Array of TArgument;
 
 type
@@ -132,14 +128,11 @@ type
     }
     TAppArgs = class(TObject)
     private
-
         { The program file name with full path.}
         FName: TArgString;
-
         { Program command line arguments and options (in short and long
-            format). }
+          format). }
         FArguments: TArguments;
-
     protected
         { See Arguments property. }
         function Get(Index: Integer): TArgument;
@@ -149,7 +142,6 @@ type
         function GetValue(Index: Integer): TArgString;
         procedure Add(const Key: TArgString); overload;
         procedure Add(const Key, Value: TArgString); overload;
-
     public
         { The program file name. Readonly. }
         property Name: TArgString read FName;
@@ -169,28 +161,27 @@ type
         { Returns true if program has specified argument (or option). }
         function Has(const Key: TArgString): Boolean; overload;
 
-        { Returns true if program has specified option in short or
-            long format. }
+        { Returns true if program has specified option in short or long
+          format. }
         function Has(const Short, Long: TArgString): Boolean; overload;
 
         { Returns true if program has Help option (-h or --help). }
         function HasHelp(): Boolean;
 
         { Returns true if program has Version option (see OPTION_VERSION_*
-            constants). }
+          constants). }
         function HasVersion(): Boolean;
 
         { Returns true if program has Verbose option (see OPTION_VERBOSE_*
-            constants). }
+          constants). }
         function HasVerbose(): Boolean;
 
         { Returns value for specified option, or empty string. }
         function GetValue(const Key: TArgString): TArgString; overload;
 
         { Returns value for specified option (in short and long format), or
-            empty string. }
-        function GetValue(const Short, Long: TArgString):
-            TArgString; overload;
+          empty string. }
+        function GetValue(const Short, Long: TArgString): TArgString; overload;
 
         { Clears all stored data. }
         procedure Clear();
@@ -205,7 +196,9 @@ type
         destructor Destroy; override;
     end;
 
-implementation                                                { IMPLEMENTETION }
+{------------------------------------------------------------------------------}
+
+IMPLEMENTATION                                                { IMPLEMENTATION }
 
 uses Mikhan.Util.StrUtils;
 
@@ -259,7 +252,6 @@ end;
 
 function TArgument.IsOption: Boolean;
 begin
-    //Result := HasShortPrefix(Self.Key) or HasLongPrefix(Self.Key);
     Result := Mikhan.Util.AppArgs.IsOption(Self.Key);
 end;
 
@@ -423,6 +415,8 @@ begin
     end;
 end;
 
-end.                                                                     { END }
+{------------------------------------------------------------------------------}
+
+END.                                                                     { END }
 
 {------------------------------------------------------------------------------}

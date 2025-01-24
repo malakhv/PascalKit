@@ -34,10 +34,10 @@
 
 Unit Mikhan.Util.StrUtils;                                              { UNIT }
 
-{$mode delphi}
-{$h+}
+{$MODE DELPHI}
+{$H+}
 
-Interface                                                          { INTERFACE }
+INTERFACE                                                          { INTERFACE }
 
 {
     Some character constants
@@ -127,7 +127,11 @@ function BytesToStr(const Source: Array of Byte): String;
 { Repeats source string the specified number of times. }
 function RepeatString(const Source: String; Count: Integer): String;
 
-Implementation                                                { IMPLEMENTETION }
+{------------------------------------------------------------------------------}
+
+IMPLEMENTATION                                                { IMPLEMENTATION }
+
+{------------------------------------------------------------------------------}
 
 uses SysUtils;
 
@@ -169,4 +173,8 @@ begin
         Move(Source[1], Result[len*i+1], len);
 end;
 
-end.                                                                     { END }
+{------------------------------------------------------------------------------}
+
+END.                                                                     { END }
+
+{------------------------------------------------------------------------------}
