@@ -386,32 +386,37 @@ end;
 
 procedure TAppArgs.Parse();
 var
-    arg, val: String;
-    cur, count: Integer;
+    Arg, Val: String;
+    Current, Count: Integer;
 begin
     Clear();
-    count := ParamCount();
-    if count <= 0 then Exit;
+
+    // In common case we have minimum 1 parameter
+    // (the program file name)
+    Count := ParamCount();
+    if Count <= 0 then Exit; // ???, but OK
     FName := ParamStr(0);
-    cur := 1;
-    while cur <= count do
+
+    // Parsing program arguments
+    Current := 1;
+    while Current <= Count do
     begin
-        arg := ParamStr(cur);
-        if IsOption(arg) then
+        Arg := ParamStr(Current);
+        if IsOption(Arg) then
         begin
-            if cur < count then
-                val := ParamStr(cur + 1)
+            if Current < Count then
+                Val := ParamStr(Current + 1)
             else
-                val := '';
-            if (val <> '') and (not IsOption(val)) then
+                Val := '';
+            if (Val <> '') and (not IsOption(Val)) then
             begin
-                Add(arg, val);
-                Inc(cur);
+                Add(Arg, Val);
+                Inc(Current);
             end else
-                Add(arg);
+                Add(Arg);
         end else
-            Add(arg);
-        Inc(cur);
+            Add(Arg);
+        Inc(Current);
     end;
 end;
 
