@@ -56,6 +56,9 @@ const
     { The tab character. }
     CHAR_TAB = #9;
 
+    { The home character. }
+    CHAR_HOME = #36;
+
     { The dot character. }
     CHAR_DOT = '.';
 
