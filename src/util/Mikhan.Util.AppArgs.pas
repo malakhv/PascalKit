@@ -225,16 +225,17 @@ begin
 end;
 
 function FindArgument(Short, Long: TArgString; const Target: TArguments):
-  Integer; overload;
-var item: TArgument;
-var i: Integer;
+    Integer; overload;
+var
+    I: Integer;
+    Item: TArgument;
 begin
-    for i := Low(Target) to High(Target) do
+    for I := Low(Target) to High(Target) do
     begin
-        item := Target[i];
-        if (item.Key = Short) or (item.Key = Long) then
+        Item := Target[I];
+        if (Item.Key = Short) or (Item.Key = Long) then
         begin
-            Result := i; Exit;
+            Result := I; Exit;
         end;
     end;
     Result := -1;
