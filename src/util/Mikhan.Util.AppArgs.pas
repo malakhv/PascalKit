@@ -338,11 +338,12 @@ begin
 end;
 
 function TAppArgs.GetValue(const Short, Long: TArgString): TArgString;
-var opt: Integer;
+var
+    Opt: Integer;
 begin
-    opt := FindArgument(Short, Long, FArguments);
-    if opt >= 0 then
-        Result := Arguments[opt].Value
+    Opt := FindArgument(Short, Long, FArguments);
+    if Opt >= 0 then
+        Result := Arguments[Opt].Value
     else
         Result := STR_EMPTY;
 end;
@@ -363,24 +364,26 @@ begin
 end;
 
 procedure TAppArgs.Add(const Key, Value: TArgString); overload;
-var len: integer;
+var
+    L: Integer;
 begin
-    len := Length(FArguments);
-    SetLength(FArguments, len + 1);
-    FArguments[len].Key := Key;
-    FArguments[len].Value := Value;
+    L := Length(FArguments);
+    SetLength(FArguments, L + 1);
+    FArguments[L].Key := Key;
+    FArguments[L].Value := Value;
 end;
 
 procedure TAppArgs.Print();
-var item: TArgument;
+var
+    Item: TArgument;
 begin
     WriteLn('Name: ', Self.Name);
     WriteLn('Arguments:');
-    for item in FArguments do
+    for Item in FArguments do
     begin
-        Write('  ', item.Key);
+        Write('  ', Item.Key);
         if item.HasValue then
-            Write('=', item.Value);
+            Write('=', Item.Value);
         WriteLn();
     end;
 end;
