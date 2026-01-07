@@ -65,38 +65,38 @@ const
 const
 
     { Program option: List, short format. }
-    OPTION_LIST_SHORT = OPT_PREFIX_SHORT + 'l';
+    OPT_LIST_SHORT = OPT_PREFIX_SHORT + 'l';
     { Program option: List, long format. }
-    OPTION_LIST_LONG = OPT_PREFIX_LONG + 'list';
+    OPT_LIST_LONG = OPT_PREFIX_LONG + 'list';
 
     { Program option: Status, short format. }
-    OPTION_STATUS_SHORT = OPT_PREFIX_SHORT + 's';
+    OPT_STATUS_SHORT = OPT_PREFIX_SHORT + 's';
     { Program option: Status, long format. }
-    OPTION_STATUS_LONG = OPT_PREFIX_LONG + 'status';
+    OPT_STATUS_LONG = OPT_PREFIX_LONG + 'status';
     
     { Program option: Info, short format. }
-    OPTION_INFO_SHORT = OPT_PREFIX_SHORT + 'i';
+    OPT_INFO_SHORT = OPT_PREFIX_SHORT + 'i';
     { Program option: Info, long format. }
-    OPTION_INFO_LONG = OPT_PREFIX_LONG + 'info';
+    OPT_INFO_LONG = OPT_PREFIX_LONG + 'info';
 
     { Program option: File, short format. }
-    OPTION_FILE_SHORT = OPT_PREFIX_SHORT + 'f';
+    OPT_FILE_SHORT = OPT_PREFIX_SHORT + 'f';
     { Program option: File, long format. }
-    OPTION_FILE_LONG = OPT_PREFIX_LONG + 'file';
+    OPT_FILE_LONG = OPT_PREFIX_LONG + 'file';
 
     { Program option: Help, short format. }
-    OPTION_HELP_SHORT = OPT_PREFIX_SHORT + 'h';
+    OPT_HELP_SHORT = OPT_PREFIX_SHORT + 'h';
     { Program option: Help, long format. }
-    OPTION_HELP_LONG = OPT_PREFIX_LONG + 'help';
+    OPT_HELP_LONG = OPT_PREFIX_LONG + 'help';
 
     { Program option: Version, short format. }
-    OPTION_VERSION_SHORT = OPT_PREFIX_SHORT + 'v';
+    OPT_VERSION_SHORT = OPT_PREFIX_SHORT + 'v';
     { Program option: Version, long format. }
-    OPTION_VERSION_LONG = OPT_PREFIX_LONG + 'version';
+    OPT_VERSION_LONG = OPT_PREFIX_LONG + 'version';
 
     { Program option: Verbose (turning on all log messages), this option has
         only long format. }
-    OPTION_VERBOSE_LONG = OPT_PREFIX_LONG + 'verbose';
+    OPT_VERBOSE_LONG = OPT_PREFIX_LONG + 'verbose';
 
 type
 
