@@ -91,7 +91,7 @@ const
 
     { Program option: Version, short format. }
     OPTION_VERSION_SHORT = OPT_PREFIX_SHORT + 'v';
-    { Program option: Status, long format. }
+    { Program option: Version, long format. }
     OPTION_VERSION_LONG = OPT_PREFIX_LONG + 'version';
 
     { Program option: Verbose (turning on all log messages), this option has
