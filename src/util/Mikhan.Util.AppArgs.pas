@@ -25,7 +25,7 @@
 {                                                                              }
 { Project: Pascal Utils Library (PUL)                                          }
 { Package: Mikhan.Util                                                         }
-{ Types: TAppParams                                                            }
+{ Types:   TAppArgs                                                            }
 {                                                                              }
 { Dependencies: Mikhan.Util.StrUtils                                           }
 {                                                                              }
