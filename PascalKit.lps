@@ -8,6 +8,7 @@
       <Unit>
         <Filename Value="PascalKit.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos Y="40"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
@@ -23,10 +24,11 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="376"/>
-        <CursorPos Y="425"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="292"/>
+        <CursorPos X="5" Y="327"/>
         <UsageCount Value="14"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -45,11 +47,11 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="363"/>
-        <CursorPos X="70" Y="367"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="23"/>
         <UsageCount Value="13"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -76,15 +78,26 @@
       </Unit>
       <Unit>
         <Filename Value="..\S-Lang\rtl\collections\SLang.List.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="455"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory HistoryIndex="2">
+      <Position>
+        <Filename Value="..\S-Lang\rtl\collections\SLang.List.pas"/>
+        <Caret TopLine="455"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
+        <Caret Line="431" Column="22" TopLine="402"/>
+      </Position>
+      <Position>
+        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
+        <Caret Line="327" Column="5" TopLine="292"/>
+      </Position>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>

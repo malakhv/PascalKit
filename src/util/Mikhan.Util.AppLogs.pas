@@ -20,7 +20,7 @@
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
-{ The Unit contains types, methods and classes to working with program log.    }                                                                    }
+{ The Unit contains types, methods and classes to working with program log.    }
 {                                                                              }
 { Package: Mikhan.Util                                                         }
 { Types: TAppLogs, TLogLevel                                                   }

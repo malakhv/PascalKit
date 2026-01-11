@@ -319,17 +319,17 @@ end;
 
 function TAppArgs.HasHelp(): Boolean;
 begin
-    Result := Has(OPTION_HELP_SHORT, OPTION_HELP_LONG);
+    Result := Has(OPT_HELP_SHORT, OPT_HELP_LONG);
 end;
 
 function TAppArgs.HasVersion(): Boolean;
 begin
-    Result := Has(OPTION_VERSION_SHORT, OPTION_VERSION_LONG);
+    Result := Has(OPT_VERSION_SHORT, OPT_VERSION_LONG);
 end;
 
 function TAppArgs.HasVerbose(): Boolean;
 begin
-    Result := Has(OPTION_VERBOSE_LONG);
+    Result := Has(OPT_VERBOSE_LONG);
 end;
 
 function TAppArgs.GetValue(const Key: TArgString): TArgString;
