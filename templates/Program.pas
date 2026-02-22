@@ -30,7 +30,7 @@
 { Operating Systems: [Win, Linux, MacOS]                                       }
 {                                                                              }
 { Created: 14.11.2023                                                          }
-{ Authors: Mikhail.Malakhov [http://mikhan.me/]                                }
+{ Authors: Mikhail.Malakhov                                                    }
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
@@ -59,10 +59,12 @@ PROGRAM name;                                                        { PROGRAM }
 {$H+}
 {$T+}
 
-uses SysUtils;
+USES                                                                    { USES }
+
+    SysUtils;
 
 {
-    Internal flags
+    Internal Program Data
 }
 const
 
@@ -70,23 +72,22 @@ const
     DEBUG = False;
 
 {
-    Information about this program
+    About this Program
 }
 const
 
-    { The name of this program. }
+    { The name of this Program. }
     PROG_NAME = 'S-Dump';
 
-    { The author of this program. }
+    { The author of this Program. }
     PROG_AUTHOR = 'Mikhail.Malakhov';
 
     { The copyright string. }
-    PROG_COPYRIGHT = 'Copyright (C) 1996-2023 Mikhail Malakhov ' +
-        '<malakhv@gmail.com>';
-
+    PROG_COPYRIGHT = 'Copyright (C) 1996-2023 Mikhail Malakhov, ' +
+        'http://mikhan.me/';
 
 {------------------------------------------------------------------------------}
-{ Arguments                                                                    }
+{ Options and Arguments                                                        }
 {------------------------------------------------------------------------------}
 
 {
