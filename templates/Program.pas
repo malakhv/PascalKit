@@ -26,11 +26,11 @@
 { Project: PROJECT-NAME                                                        }
 { Package: Mikhan.Templates                                                    }
 {                                                                              }
-{ Dependencies: No                                                             }
-{ Operating Systems: Win, Linux, MacOs                                         }
+{ Dependencies: [NO | list of non-standard (non RTL/VCL) Units ]               }
+{ Operating Systems: [Win, Linux, MacOS]                                       }
 {                                                                              }
 { Created: 14.11.2023                                                          }
-{ Authors: Mikhail.Malakhov [malakhv@gmail.com|http://mikhan.me/]              }
+{ Authors: Mikhail.Malakhov [http://mikhan.me/]                                }
 {------------------------------------------------------------------------------}
 
 {------------------------------------------------------------------------------}
@@ -62,6 +62,14 @@ PROGRAM name;                                                        { PROGRAM }
 uses SysUtils;
 
 {
+    Internal flags
+}
+const
+
+    { The common debug flag. }
+    DEBUG = False;
+
+{
     Information about this program
 }
 const
@@ -76,13 +84,10 @@ const
     PROG_COPYRIGHT = 'Copyright (C) 1996-2023 Mikhail Malakhov ' +
         '<malakhv@gmail.com>';
 
-{
-    Internal flags
-}
-const
 
-    { The common debug flag. }
-    DEBUG = False;
+{------------------------------------------------------------------------------}
+{ Arguments                                                                    }
+{------------------------------------------------------------------------------}
 
 {
     Program command line arguments (options and commands)
@@ -94,19 +99,20 @@ const
     { Program option: A short description of this option, long format. }
     OPT_ONE_LONG = '--one';
 
-{------------------------------------------------------------------------------}
-
 { Program command line arguments variables }
 var
     OptOne: Boolean;    // See 'One' program option
 
-{ Global Scope }
+{------------------------------------------------------------------------------}
+{ Global Scope                                                                 }
+{------------------------------------------------------------------------------}
+
 var
     X: Integer;     // Global variable X
 
 {------------------------------------------------------------------------------}
-
-/// Global procedures and functions section. ///
+{ Procedures and Functions                                                     }
+{------------------------------------------------------------------------------}
 
 { Calculates the value depending on the program options. }
 function CalcX(): Integer;
