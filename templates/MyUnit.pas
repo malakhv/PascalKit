@@ -132,7 +132,7 @@ var
 {                                                                              }
 {------------------------------------------------------------------------------}
 
-{ The group of constants }
+{ The group of constants related to Section 1 }
 const
 
     { The constant 1 into section 1. }
@@ -141,6 +141,7 @@ const
     { The constant 2 into section 1. }
     SECTION_1_CONST_2 = 2;
 
+{ The new data type related to Section 1 }
 type
     TSectionType1 = 1..3;
 
@@ -284,8 +285,6 @@ begin
         end;
 
 end;
-
-
 
 END.                                                                     { END }
 
