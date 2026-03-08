@@ -8,8 +8,9 @@ unit PascalKit;
 interface
 
 uses
-  Mikhan.Util.StrUtils, Mikhan.Util.AppArgs, Mikhan.Util.AppVersion, 
-  Mikhan.Util.AppLogs, Mikhan.Util.Dump, LazarusPackageIntf;
+  Mikhan.Util.StrUtils, Mikhan.Util.AppArgs, Mikhan.Util.AppVersion,
+  Mikhan.Util.AppLogs, Mikhan.Util.Dump, Mikhan.Util.System,
+  LazarusPackageIntf;
 
 implementation
 

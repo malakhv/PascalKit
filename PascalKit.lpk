@@ -61,6 +61,10 @@ and limitations under the License."/>
         <Filename Value="src\util\Mikhan.Util.Dump.pas"/>
         <UnitName Value="Mikhan.Util.Dump"/>
       </Item>
+      <Item>
+        <Filename Value="src\util\Mikhan.Util.System.pas"/>
+        <UnitName Value="Mikhan.Util.System"/>
+      </Item>
     </Files>
     <RequiredPkgs>
       <Item>
