@@ -9,7 +9,7 @@
         <Filename Value="PascalKit.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos Y="40"/>
+        <CursorPos X="2" Y="25"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -24,11 +24,10 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="292"/>
         <CursorPos X="5" Y="327"/>
         <UsageCount Value="14"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -47,11 +46,10 @@
       </Unit>
       <Unit>
         <Filename Value="src\util\Mikhan.Util.AppLogs.pas"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="8"/>
         <CursorPos Y="23"/>
         <UsageCount Value="13"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -78,26 +76,11 @@
       </Unit>
       <Unit>
         <Filename Value="..\S-Lang\rtl\collections\SLang.List.pas"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="455"/>
+        <EditorIndex Value="-1"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="2">
-      <Position>
-        <Filename Value="..\S-Lang\rtl\collections\SLang.List.pas"/>
-        <Caret TopLine="455"/>
-      </Position>
-      <Position>
-        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <Caret Line="431" Column="22" TopLine="402"/>
-      </Position>
-      <Position>
-        <Filename Value="src\util\Mikhan.Util.AppArgs.pas"/>
-        <Caret Line="327" Column="5" TopLine="292"/>
-      </Position>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
